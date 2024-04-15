@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterators and Iterables</title>
+</head>
+<body>
+  <BUtton><a href="./Generator functions.html">myGenerator</a></BUtton>  
+<script>
+ // Creating a custom iterable object
+const myIterable = {
+  data: [1, 2, 3, 4, 5],
+  [Symbol.iterator]: function() {
+    let index = 0;
+    const dataArray = this.data;
+
+    // Return the iterator object
+    return {
+      next: function() {
+        return index < dataArray.length ? 
+          { value: dataArray[index++], done: false } :
+          { value: undefined, done: true };
+      }
+    };
+  }
+};
+
+
+// Using the custom iterable with a for...of loop
+for (const item of myIterable) {
+  console.log(item);
+}
+
+</script>
+</body>
+</html>

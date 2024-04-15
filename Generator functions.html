@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button><a href="./Iterators and Iterables.html">home</a></button>
+<Script>
+// Define a generator function
+function *myGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+// Create a generator object
+const generator = myGenerator();
+
+// Use the generator to iterate
+console.log(generator.next()); // Output: { value: 1, done: false }
+console.log(generator.next()); // Output: { value: 2, done: false }
+console.log(generator.next()); // Output: { value: 3, done: false }
+console.log(generator.next()); // Output: { value: undefined, done: true }
+</Script>
+
+</body>
+</html>
