@@ -1,1 +1,1 @@
-Generator functions.html
+Generator functions
